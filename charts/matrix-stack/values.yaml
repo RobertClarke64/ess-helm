@@ -78,7 +78,7 @@ ingress:
   # controllerType:
 
 httpRoute:
-  parentRefs: {}
+  parentRefs: []
 
 ## Common image properties that are applied as defaults to all components.
 image:
@@ -507,6 +507,8 @@ matrixRTC:
     ## If set, some tweaks will be applied automatically to ingresses based on the controller type here.
     ## This can be set to `ingress-nginx`.
     # controllerType:
+  httpRoute:
+    enabled: false
   # Details of the image to be used
   image:
     ## The host and (optional) port of the container image registry for this component.
@@ -1171,6 +1173,8 @@ elementAdmin:
     ## If set, some tweaks will be applied automatically to ingresses based on the controller type here.
     ## This can be set to `ingress-nginx`.
     # controllerType:
+  httpRoute:
+    enabled: false
   ## Labels to add to all manifest for this component
   labels: {}
   ## Defines the annotations to add to the workload
@@ -1434,6 +1438,8 @@ elementWeb:
     ## If set, some tweaks will be applied automatically to ingresses based on the controller type here.
     ## This can be set to `ingress-nginx`.
     # controllerType:
+  httpRoute:
+    enabled: false
   ## Labels to add to all manifest for this component
   labels: {}
   ## Defines the annotations to add to the workload
@@ -1952,6 +1958,8 @@ hookshot:
     ## If set, some tweaks will be applied automatically to ingresses based on the controller type here.
     ## This can be set to `ingress-nginx`.
     # controllerType:
+  httpRoute:
+    enabled: false
 
   ## Additional configuration to provide to Hookshot.
   ## You can, if you whish, override it in the additional config.
@@ -2403,6 +2411,8 @@ matrixAuthenticationService:
     ## If set, some tweaks will be applied automatically to ingresses based on the controller type here.
     ## This can be set to `ingress-nginx`.
     # controllerType:
+  httpRoute:
+    enabled: false
 
   ## Kubernetes resources to allocate to each instance.
   resources:
@@ -4922,6 +4932,8 @@ synapse:
     ## If set, some tweaks will be applied automatically to ingresses based on the controller type here.
     ## This can be set to `ingress-nginx`.
     # controllerType:
+  httpRoute:
+    enabled: false
   ## Labels to add to all manifest for this component
   labels: {}
   ## Defines the annotations to add to the workload
@@ -5169,6 +5181,9 @@ wellKnownDelegation:
     enabled: true
     ## You can override with another redirect URL here.
     url: ""
+
+  httpRoute:
+    enabled: false
 
   ## Additional configuration to provide to all WellKnown static file
   ## Configuration should be provided as JSON strings

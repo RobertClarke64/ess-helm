@@ -224,6 +224,17 @@
       },
       "additionalProperties": false
     },
+    "httpRoute": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "parentRefs": {
+          "type": "array"
+        }
+      }
+    },
     "tolerations": {
       "type": "array",
       "items": {
@@ -1480,6 +1491,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -1552,6 +1566,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "labels": {
           "type": "object",
@@ -3114,6 +3139,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -3186,6 +3214,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "labels": {
           "type": "object",
@@ -3892,6 +3931,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -3964,6 +4006,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "labels": {
           "type": "object",
@@ -5173,6 +5226,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -5245,6 +5301,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "image": {
           "type": "object",
@@ -6612,6 +6679,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -6684,6 +6754,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "image": {
           "type": "object",
@@ -9320,6 +9401,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -9463,6 +9547,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "image": {
           "type": "object",
@@ -15111,6 +15206,9 @@
         "ingress": {
           "type": "object",
           "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -15180,6 +15278,17 @@
             }
           },
           "additionalProperties": false
+        },
+        "httpRoute": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "parentRefs": {
+              "type": "array"
+            }
+          }
         },
         "labels": {
           "type": "object",
