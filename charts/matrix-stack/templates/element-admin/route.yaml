@@ -4,7 +4,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: {{ $.Release.Name }}-element-admin
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "element-io.element-admin.labels" (dict "root" $ "context" .) | nindent 4 }}
 spec:
@@ -21,6 +21,6 @@ spec:
             value: /
       backendRefs:
         - name: {{ $.Release.Name }}-element-admin
-          port: http
+          port: 8080
 {{- end }}
 {{- end }}

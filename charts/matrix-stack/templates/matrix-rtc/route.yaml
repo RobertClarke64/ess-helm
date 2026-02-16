@@ -4,7 +4,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: {{ $.Release.Name }}-matrix-rtc
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "element-io.matrix-rtc-ingress.labels" (dict "root" $ "context" .) | nindent 4 }}
 spec:
@@ -21,7 +21,7 @@ spec:
             value: /sfu/get
       backendRefs:
         - name: {{ $.Release.Name }}-matrix-rtc-authorisation-service
-          port: http
+          port: 8080
 {{ if .sfu.enabled }}
     - matches:
         - path:
@@ -29,7 +29,7 @@ spec:
             value: /
       backendRefs:
         - name: {{ $.Release.Name }}-matrix-rtc-sfu
-          port: http
+          port: 7880
 {{- end }}
 {{- end }}
 {{- end }}
