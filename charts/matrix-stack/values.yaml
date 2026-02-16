@@ -77,6 +77,9 @@ ingress:
   ## This can be set to `ingress-nginx`.
   # controllerType:
 
+httpRoute:
+  parentRefs: {}
+
 ## Common image properties that are applied as defaults to all components.
 image:
   ## The pullPolicy to use for all images. This overrides the pullPolicy used by the templates
@@ -475,6 +478,7 @@ matrixRTC:
   replicas: 1
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 
@@ -1138,6 +1142,7 @@ elementAdmin:
     pullSecrets: []
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 
@@ -1400,6 +1405,7 @@ elementWeb:
     pullSecrets: []
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 
@@ -1917,6 +1923,7 @@ hookshot:
 
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 
@@ -2367,6 +2374,7 @@ matrixAuthenticationService:
 
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 
@@ -4885,6 +4893,7 @@ synapse:
 
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 
@@ -5124,6 +5133,7 @@ wellKnownDelegation:
 
   ## How this ingress should be constructed
   ingress:
+    enabled: true
     ## What hostname should be used for this Ingress
     # host:
 

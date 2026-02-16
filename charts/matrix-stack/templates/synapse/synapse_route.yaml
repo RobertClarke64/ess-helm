@@ -1,0 +1,29 @@
+{{- with .Values.synapse }}
+{{- if .httpRoute.enabled }}
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: {{ $.Release.Name }}-synapse
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "element-io.synapse-ingress.labels" (dict "root" $ "context" $.Values.haproxy) | nindent 4 }}
+spec:
+  parentRefs:
+    {{- required "A valid .Values.httpRoute.parentRefs entry is required when httpRoute.enabled is true" $.Values.httpRoute.parentRefs | toYaml | nindent 4 }}
+  {{- with .httpRoute.hostnames }}
+  hostnames:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  rules:
+{{- range $synapsePath := (list "/_matrix" "/_synapse") -}}
+    - matches:
+        # TODO: additional paths
+        - path:
+            type: PathPrefix
+            value: {{ $synapsePath }}
+      backendRefs:
+        - name: {{ $.Release.Name }}-synapse
+          port: haproxy-synapse
+{{- end }}
+{{- end }}
+{{- end }}
