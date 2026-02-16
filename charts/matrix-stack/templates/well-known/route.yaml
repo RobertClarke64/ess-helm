@@ -22,7 +22,7 @@ spec:
             value: /
       backendRefs:
         - name: {{ $.Release.Name }}-well-known
-          port: haproxy-wkd
+          port: 8010
 {{- else }}
     - matches:
         - path:
